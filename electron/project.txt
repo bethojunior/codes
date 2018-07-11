@@ -1,0 +1,10 @@
+
+
+# Clone o repositório Quick Start
+$ git clone https://github.com/electron/electron-quick-start
+
+# Ir para o repositório
+$ cd electron-quick-start
+
+# Instale as dependências e execute
+$ npm install && npm start

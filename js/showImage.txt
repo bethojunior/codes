@@ -1,0 +1,12 @@
+    document.getElementById("fileUpload").onchange = function() {
+        //console.log(this);
+        if (this.files && this.files[0]) {
+            let reader = new FileReader();
+
+            reader.onload = function(e) {
+                document.getElementById("imagem").setAttribute('src', e.target.result);
+            };
+
+            reader.readAsDataURL(this.files[0]);
+        }
+    };

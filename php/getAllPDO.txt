@@ -1,0 +1,41 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Betho Junior
+ * Date: 19/04/2018
+ * Time: 13:55
+ */
+
+class NotificationGroupDao{
+
+    private $con;
+
+    public function __construct(){
+        try{
+
+            $this->con = Connection::open(Connection::DB_MYSQL);
+
+        }catch (PDOException $exception){
+            echo $exception->getMessage();
+        }
+    }
+
+    function getAll(){
+        $return = false;
+
+        try{
+            $query = ("SELECT * FROM GroupNotification");
+            $query = $this->con->prepare($query);
+            $query -> execute();
+            if($query->rowCount() > 0){
+                $typeGroup = $query->fetchAll(PDO::FETCH_OBJ);
+            }
+            $return = $typeGroup;
+
+        }catch (PDOException $e){
+            echo $e->getMessage();
+        }
+
+        return $return;
+    }
+}
