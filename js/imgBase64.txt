@@ -1,0 +1,10 @@
+    imageToBase64(img) {
+        let canvas, ctx, dataURL;
+        canvas = document.createElement("canvas");
+        ctx = canvas.getContext("2d");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        dataURL = canvas.toDataURL("image/png");
+        return dataURL;
+    }
