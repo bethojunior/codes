@@ -1,0 +1,13 @@
+function searchNotification() {
+    let valor = document.getElementById("searchNotification").value;
+
+    for(let i in document.getElementsByClassName("rowListTable")){
+        if(document.getElementsByClassName("titleNotificationRead")[i].tagName !== "TD"){
+            continue;
+        }
+        document.getElementsByClassName("rowListTable")[i].style.display = "none";
+        if(document.getElementsByClassName("titleNotificationRead")[i].getAttribute("value").toUpperCase().startsWith(valor.toUpperCase())){
+            document.getElementsByClassName("rowListTable")[i].style = "";
+        }
+    }
+}
