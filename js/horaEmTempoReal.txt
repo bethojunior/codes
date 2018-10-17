@@ -1,0 +1,30 @@
+       function getTime(){
+       
+        var today = new Date();
+        
+        var hora = today.getHours();
+        var m = today.getMinutes();
+
+        var s = today.getSeconds(); 
+
+      
+        today = hora+":"+m+":"+s;
+        
+        document.getElementById("demo").innerHTML = today;
+        
+        rea()
+       
+       }
+        
+        function rea(){
+        
+        setTimeout(function(){
+        
+        	
+			getTime()
+        
+        },100);
+        
+        }
+        
+        rea();

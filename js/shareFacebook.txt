@@ -1,0 +1,7 @@
+    $title = "Blog da Geocorr";
+    $url= "https://www.geocorrambiental.com.br/index/BlogNews?id=".$idPost;
+    $summary=urlencode('Custom message that summarizes what your tab is about,  or just a simple message to tell people to check out your tab.');
+    $image= "https://www.geocorrambiental.com.br/webfiles/images/maior.png";
+
+
+onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image[0];?>', 'sharer', 'toolbar=0,status=0,width=548,height=325');" target="_parent" href="javascript: void(0)" class='' target='_blank'

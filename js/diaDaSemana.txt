@@ -1,0 +1,6 @@
+    var data = new Date();
+    var dias = new Array(
+        'domingo','segunda','terça','quarta','quinta','sexta','sábado'
+    );
+
+    alert('Hoje é ' + dias[data.getDay()]);
