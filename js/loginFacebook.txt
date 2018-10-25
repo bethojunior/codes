@@ -1,31 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <link rel="stylesheet" href="">
-</head>
-<body>
-<script>
-    // initialize and setup facebook js sdk
+function signFacebook(){
+
+    optionPreload.show();
+
     window.fbAsyncInit = function() {
+
         FB.init({
             appId      : '559943727752617',
             xfbml      : true,
             version    : 'v2.5'
         });
+
         FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
-                document.getElementById('status').innerHTML = 'We are connected.';
-                document.getElementById('login').style.visibility = 'hidden';
-            } else if (response.status === 'not_authorized') {
-                document.getElementById('status').innerHTML = 'We are not logged in.'
-            } else {
-                document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+                getInfo(false);
+                return;
             }
+            connectFacebook();
         });
     };
+
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
@@ -34,31 +27,38 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-    // login with facebook with extra permissions
-    function login() {
+
+    function connectFacebook() {
         FB.login(function(response) {
             if (response.status === 'connected') {
-                document.getElementById('status').innerHTML = 'We are connected.';
-                document.getElementById('login').style.visibility = 'hidden';
-            } else if (response.status === 'not_authorized') {
-                document.getElementById('status').innerHTML = 'We are not logged in.'
-            } else {
-                document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+                getInfo(true);
+                return;
             }
         }, {scope: 'email'});
+
     }
 
-    // getting basic user info
-    function getInfo() {
-        FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id,email'}, function(response) {
-            document.getElementById('status').innerHTML = response.id;
-            console.log(response);
+    function getInfo(scop) {
+
+        FB.api('/me', 'GET', {locale: 'pt_BR', fields: 'first_name,last_name,name,email,picture'}, function(response){
+
+            optionPreload.hidde();
+
+            //informar que está logando via facebook
+
+            let name          = response.name;
+            let email         = response.email;
+            let nickname      = response.first_name;
+            let dataUser      = {email,name,nickname};
+
+            customerController.authenticateSocial(dataUser).then(res => {
+                if(res.status){
+                    Session.setCookie('user',res.data);
+                    window.location = HOST;
+                }
+            });
+
         });
     }
-</script>
 
-<div id="status"></div>
-<button onclick="getInfo()">Get Info</button>
-<button onclick="login()" id="login">Login</button>
-</body>
-</html>
+}

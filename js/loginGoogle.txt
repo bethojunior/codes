@@ -1,0 +1,44 @@
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="482379974936-9aog5nqre42k8mgdlqsk44du76q5eoq2.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+let statusLoginGoogle = false;
+
+<div onclick="loginGoogle()"  class="g-signin2"  data-onsuccess="signGoogle" data-theme="dark"></div>
+
+function signGoogle(googleUser) {
+
+    let profile = googleUser.getBasicProfile();
+
+    let name     = profile.getName();
+    let nickname = profile.getGivenName();
+    let email    = profile.getEmail();
+
+    userGoogle = {email,name,nickname};
+
+    if(statusLoginGoogle){
+        customerController.authenticateSocial(userGoogle).then(res => {
+
+            if(res.status){
+                Session.setCookie('user',userGoogle);
+                window.location = HOST;
+            }
+        });
+    }
+
+};
+
+function loginGoogle() {
+
+    statusLoginGoogle = true;
+
+    customerController.authenticateSocial(userGoogle).then(res => {
+
+        if(res.status){
+            Session.setCookie('user',userGoogle);
+            window.location = HOST;
+        }
+    });
+
+}
