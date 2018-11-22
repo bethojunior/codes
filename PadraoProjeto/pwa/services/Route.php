@@ -41,7 +41,7 @@ class Route extends Controller
      */
     private function getMethodDefault($path)
     {
-        $path[0] = $this->isPathValidate($path[0], "" ,"login");
+        $path[0] = $this->isPathValidate($path[0], "" ,"index");
 
         $this->class = new DefaultController();
 

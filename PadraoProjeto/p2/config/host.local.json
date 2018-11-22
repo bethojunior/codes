@@ -1,5 +1,5 @@
 {
-  "HOST":  "/taxireturn/",
+  "HOST":       "/taxireturn/",
   "RETURN":     "https://beta.taxireturn.com.br/",
   "IMAGE":      "https://apiteste.taxireturn.com.br/storage/images/",
   "API":        "https://apiteste.taxireturn.com.br/",

@@ -8,18 +8,16 @@
 
 class DefaultController extends View
 {
-    public function actionLogin()
+    public function actionIndex()
     {
-        $this->layoutBuilder(['preload/index','login/index'],
-            [   
-                "utils/Handle",
+        $this->layoutBuilder(['preload/index','home/index'],
+            [
                 "utils/preload",
-                "controllers/CustomerController",
-                "controllers/UserController",
-                "modulos/login"
+                "modulos/home/init"
             ],
-            ["login"]);
+            ["home/init"]);
     }
+
 
     public function actionOffline(){
         $this->rendererView('offline/index');
