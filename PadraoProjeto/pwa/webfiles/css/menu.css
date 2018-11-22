@@ -1,0 +1,889 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+    font-family: 'Dosis', sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+.dataNav{
+    margin-left: 5vw;
+}
+.mt-2{
+    margin-top: -5vw;
+}
+.container-menu{
+    float: left;
+    width: 100%;
+    background-color: rgb(233,153,26);
+    position: relative;
+    height: 75vw;
+    margin-bottom: 10vw;
+}
+.container-menu::after{
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    background-color: #e9991a;
+    content: '';
+    bottom: calc(0% - 6.5vw);
+    right: 0;
+    left: 0;
+    margin: auto;
+    transform: rotate(45deg);
+    border-radius: 1vw;
+}
+.arrow-touch-down{
+    position: absolute;
+    width: 10%;
+    bottom: -5vw;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1;
+    animation: 1s infinite arrowTouchDown;
+    padding: 2vw;
+}
+@keyframes arrowTouchDown {
+    0%{
+        bottom: -5vw;
+    }
+    25%{
+        bottom: -8vw;
+    }
+    50%{
+        bottom: -5vw;
+    }
+    75%{
+        bottom: -8vw;
+    }
+}
+.container-menu.remove-after::after{
+    display: none;
+}
+
+.container-menu .container-logo{
+    width: 60%;
+    background-color: #fff;
+    display: block;
+    margin: auto;
+    border-radius: 0 0 40vw 40vw;
+    top: -80%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 130vw;
+    box-shadow: 0 0 5vw #606060;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.container-menu .container-logo.active{
+    top: 0;
+    height: 140vw;
+    transition: 0.5s;
+}
+
+.container-menu .container-logo h4{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 4vw;
+    margin-bottom: 2vw;
+    font-size: 7vw;
+}
+
+.container-menu .container-logo img{
+    width: 100%;
+    display: block;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+
+.container-menu .menu-return{
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    color: #fff;
+    font-size: 11vw;
+}
+
+.container-menu .container-logo .local-destiny{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+.container-menu .container-logo .local-destiny ul#listEstablishment>li{
+    width: 100%;
+    position: relative;
+}
+.container-menu .container-logo .local-destiny ul#listEstablishment>li > p{
+    text-align: center;
+}
+
+.container-menu .container-logo .local-destiny ul#listEstablishment>li i.material-icons{
+    position: absolute;
+    top: 11vw;
+    z-index: 10;
+    background-color: rgba(255,255,255,0.3);
+    color: #fff;
+    border-radius: 100%;
+}
+
+.container-menu .container-logo .local-destiny ul#listEstablishment>li i.material-icons:first-child{
+    left: -18vw;
+}
+.container-menu .container-logo .local-destiny ul#listEstablishment>li i.material-icons:last-child{
+    right: -18vw;
+}
+
+.container-menu .container-logo .local-destiny ul#listEstablishment>li>ul{
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding: 1vw;
+}
+.container-menu .container-logo .local-destiny ul#listEstablishment>li ul li.block-local{
+    padding: 1vw;
+    background-color: #e9991a;
+    color: #fff;
+    text-align: center;
+    border-radius: 3vw;
+    font-weight: bolder;
+    box-shadow: 0 0 10px #949292;
+    display: inline-block;
+    width: 100%;
+    margin: 0 2.5vw 0;
+    height: 14vw;
+}
+
+ul li.block-local p{
+    font-size: 3vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.container-menu .container-logo .local-destiny ul#listEstablishment>li ul li.block-local:first-child{
+    margin-left: 0;
+}
+.container-menu .container-logo .local-destiny ul#listEstablishment>li ul li.block-local:last-child{
+    margin-right: 1vw;
+}
+.container-menu .container-logo .local-destiny .block-local h5{
+    font-weight: bolder;
+    font-size: 6vw;
+    margin: 0;
+    position: absolute;
+    width: 90%;
+    bottom: 1vw;
+}
+#formPassenger{
+    display: none;
+}
+
+.col.s12.input-custom{
+    border-bottom: 1px solid #e6981b;
+    color: #e6981b;
+    margin-bottom: 3vw;
+    text-transform: capitalize;
+}
+.col.s12.input-custom:focus{
+    border-bottom:1px solid #e6981b !important;
+    -webkit-box-shadow: none !important;
+    box-shadow:none !important;
+}
+.input-custom::placeholder{
+    color: #e6981b;
+}
+
+.button-confirm-run{
+    border: none;
+    padding: 2vw 5vw;
+    background-color: #e8991b;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 6vw;
+    display: block;
+    margin: auto;
+    font-size: 4vw;
+}
+
+
+.button-confirm-run:focus {
+    outline: none;
+    background-color: #e8991b;
+}
+
+.container-time-wait{
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 5vw;
+    margin: auto;
+}
+
+.time-wait{
+    position: relative;
+    width: 47vw;
+    height: 47vw;
+    border: 0.7vw dashed #e9991a;
+    display: block;
+    margin: auto;
+    right: 0;
+    left: 0;
+    border-radius: 100%;
+    -webkit-animation:spin 8s linear infinite;
+    -moz-animation:spin 8s linear infinite;
+    animation:spin 8s linear infinite;
+}
+.time-wait.stop-animation,
+.time-wait.v1.stop-animation,
+.time-wait.v2.stop-animation{
+    animation-play-state: paused;
+}.time-wait.stop-animation:after,
+.time-wait.v1.stop-animation:after,
+.time-wait.v2.stop-animation:after{
+    animation-play-state: paused;
+}
+.time-wait:after{
+    content: '';
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    background-color: #ffffff;
+    border-radius: 100%;
+    top: 4vw;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation:spin 8s linear infinite;
+    animation-direction: reverse;
+}
+.time-wait.active:after{
+    background-image: url(../img/icon/cars-frontal-orange.png);
+    z-index: 10;
+}
+
+.time-wait.v1{
+    position: absolute;
+    width: 35vw;
+    height: 35vw;
+    bottom: 15.5vw;
+    -webkit-animation:spin 6.5s linear infinite;
+    -moz-animation:spin 6.5s linear infinite;
+    animation:spin 6.5s linear infinite;
+    animation-direction: reverse;
+}
+.time-wait.v1:after{
+    top:25.5vw;
+    animation:spin 6.5s linear infinite;
+}
+
+.time-wait.v2{
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    bottom: 20.5vw;
+    -webkit-animation:spin 5s linear infinite;
+    -moz-animation:spin 5s linear infinite;
+    animation:spin 5s linear infinite;
+}
+.time-wait.v2::after{
+    top: 0;
+    left: 16.5vw;
+    animation:spin 5s linear infinite;
+    animation-direction: reverse;
+}
+
+.time-wait-zone{
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    background-color: #e9991a;
+    display: block;
+    margin: auto;
+    right: 0;
+    left: 0;
+    bottom: 25.5vw;
+    border-radius: 100%;
+}
+
+
+#switchTypeRunning{
+    margin-bottom: 1vw;
+    display: none;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.time-wait-text{
+    text-align: center;
+    margin: 3.5vw 0 0;
+    font-weight: bold;
+}
+.container-menu-options{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-90deg, rgb(228, 132, 20), rgb(240, 184, 33));
+    z-index: 99;
+    top: -250vw;
+    transition: 0.25s;
+}
+.container-menu-options.active{
+    top: 0;
+    transition: 0.25s;
+}
+
+.container-menu-options .logo-white-return{
+    width: 20vw;
+    margin-bottom: 5vw;
+    display: block;
+}
+
+.logo-white-return-nav{
+    width: 13vw;
+    margin-bottom: 5vw;
+    margin-left: 4vw;
+    margin-top: 3vw;
+    display: block;
+}
+
+.container-menu-options .info-user{
+    color: #fff;
+    margin-top: 5vw;
+}
+
+.container-menu-options .info-user img{
+    width: 18vw;
+    float: left;
+    margin: -2vw 5vw;
+}
+.container-menu-options .info-user h4{
+    font-size: 8vw;
+    padding: 0;
+    margin: 0;
+}
+.container-menu-options .info-user p{
+    font-size: 4vw;
+}
+
+.container-menu-options ul{
+    margin: 10vw ;
+}
+.container-menu-options ul li{
+    color: #fff;
+    text-transform: uppercase;
+    margin: 5vw 0;
+    font-weight: 400;
+}
+
+.container-menu-options ul li button{
+    background-color: #fff;
+    color: rgb(228, 132, 20);
+    border: none;
+    padding: 2vw 5vw;
+    border-radius: 10vw;
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.container-menu-options ul li ul{
+    margin: 0 10vw;
+    display: none;
+}
+
+.container-menu-options ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.container-menu-options ul li.active ul{
+    display: block;
+
+}
+.container-menu-options ul li ul li{
+    position: relative;
+    width: 100%;
+    right: 300vw;
+    transition: 1s;
+}
+
+.container-menu-options ul li.active ul li{
+    display: block;
+    left: 0;
+    animation-name:  item-menu;
+    animation-duration: 0.3s;
+}
+
+@keyframes item-menu {
+    0%   {
+        opacity: 0;
+        left: 300vw;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+.callTaxi {
+    display: none;
+}
+
+#version-content {
+    position: absolute;
+    bottom: 0;
+    left: 1vw;
+}
+
+#version-content label,
+#version-content span {
+    color: #fff;
+    font-size: .8rem
+}
+
+@media (min-width: 992px) {
+    .container-menu {
+        height: 30vw;
+        margin-bottom: 0vw;
+    }
+
+    .container-menu .container-logo {
+        width: 23vw;
+        top: -105vw;
+        box-shadow: 0 0 1vw #606060;
+        left: -50%;
+    }
+
+    .container-menu::after {
+        display: none;
+    }
+
+    .menu-close span {
+        top: 2vw;
+    }
+
+    .callTaxi {
+        position: relative;
+        border: none;
+        padding: 0vw 4vw;
+        top: -4vw;
+        background-color: #fff;
+        color: #e8991b;
+        border-radius: 6vw;
+        display: block;
+        margin: 0 auto;
+        font-size: 2vw;
+        font-weight: 600;
+        box-shadow: 0 0.2vw 1vw #9a6207;
+        left: -25%;
+    }
+
+    .form-data-passenger {
+        top: -7vw;
+        position: relative;
+    }
+
+    .callTaxi:focus{
+        background-color: #fff;
+    }
+    #containerInfo .container-info-return{
+        display: none;
+    }
+    #containerInfo .description-local{
+        width: 40vw;
+        height: 5vw;
+        padding: 0.5vw 1vw 1vw 2vw;
+        border-radius: 1.5vw;
+        top: 4vw;
+        position: relative;
+    }
+    #containerInfo .description-local p{
+        font-size: 2.5vw;
+        font-weight: 600;
+
+    }
+    .container-menu-options.active{
+        height: 70%;
+    }
+
+    .container-menu-options .logo-white-return{
+        display: none;
+    }
+    .container-menu-options .info-user{
+        margin-top: 3vw;
+        position: absolute;
+    }
+    .container-menu-options .info-user img{
+        width: 9vw;
+        margin: -1vw 2vw;
+    }
+    .container-menu-options .info-user h4{
+        font-size: 4vw;
+        font-weight: 600;
+        margin: 0vw 12vw 0 13vw;
+    }
+    .container-menu-options .info-user p{
+        font-size: 2vw;
+    }
+    .container-menu-options ul{
+        margin: 8vw;
+        text-align: center;
+        cursor: pointer;
+    }
+    .container-menu-options ul li{
+        margin: 0.5vw 0;
+        font-size: 2vw;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .container-menu-options ul li ul li{
+        text-transform: capitalize;
+        font-weight: 100;
+    }
+    #callTaxiMenu{
+        float: right;
+        font-weight: 800;
+        padding: 0.5vw 3vw;
+        margin-right: -23vw;
+        z-index: 99;
+    }
+
+    /* call taxi desktop */
+    .container-menu .calltaxi-desktop.container-logo {
+        top: 0;
+        height: 51vh;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo #logoCompany {
+        display: none;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo h4 {
+        font-weight: 600;
+        font-size: 3vw;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo .local-destiny 
+    ul#listEstablishment {
+        margin-top: -8vw;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo .local-destiny 
+    ul#listEstablishment>li>ul {
+        padding: 0;
+        margin-top: -2vw;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo .local-destiny 
+    ul#listEstablishment>li ul li.block-local {
+        height: 7vw;
+        border-radius: 1.8vw;
+        box-shadow: 0 0 3px rgba(0,0,0,0.2);
+        margin-top: 3vw;
+        margin-left: 0vw;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo .local-destiny 
+    ul#listEstablishment>li ul li.block-local:not(:first-child) {
+        margin-left: -1.12vw;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo .local-destiny 
+    ul#listEstablishment>li ul li.block-local p {
+        font-size: 0.9vw;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo .local-destiny 
+    ul#listEstablishment>li ul li.block-local h5 {
+        font-size: 3vw;
+        font-weight: 600;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo .local-destiny 
+    ul#listEstablishment>li i.material-icons {
+        top: 5.8vw;
+        background: #e9991a;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo .local-destiny 
+    ul#listEstablishment>li i.selected-establishment-right {
+        right: -2vw;
+    }
+
+    .container-menu .calltaxi-desktop.container-logo .local-destiny 
+    ul#listEstablishment>li i.selected-establishment-left {
+        left: -2vw;
+    }
+
+
+    .container-menu .calltaxi-desktop.container-logo .button-confirm-run {
+        padding: 0.5vw 2vw;
+        font-size: 1vw;
+        font-weight: bold;
+    }
+
+    #containerInfo .list-taxi-called.desktop-list-taxi-called {
+        position: absolute;
+        top: 1vw;
+        right: 13vw;
+        width: 48%;
+        max-height: 25vw;
+    }
+
+    #containerInfo .list-taxi-called.desktop-list-taxi-called::-webkit-scrollbar {
+        display: none;
+    }
+
+    #containerInfo .list-taxi-called.desktop-list-taxi-called li {
+        display: block;
+        background: #fff;
+        float: unset;
+    }
+
+    .container-time-wait {
+        bottom: 4vw;
+    }
+
+    .time-wait {
+        top: 5vw;
+        width: 20vw;
+        height: 20vw;
+        border-width: 0.4vw;
+    }
+
+    .time-wait:after {
+        width: 3vw;
+        height: 3vw;
+        top: 3vw;
+    }
+
+    .time-wait.v1:after {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .time-wait.v1 {
+        width: 14vw;
+        height: 14vw;
+        top: 20vw;
+    }
+
+    .time-wait.v1:after {
+        top: 9.5vw;
+        animation: spin 6.5s linear infinite;
+    }
+
+    .time-wait.v2 {
+        bottom: 0.5vw;
+        width: 7vw;
+        height: 7vw;  
+    }
+
+    .time-wait.v2::after {
+        left: 4.5vw;
+    }
+
+    .time-wait-text {
+        position: relative;
+        top: 2.5vw;
+    }
+
+    .remove-after .callTaxi.cancel-taxi-call {
+        display: none;
+    }
+
+    .time-wait-zone {
+        width: 3.5vw;
+        height: 3.5vw;
+        bottom: 8.5vw;
+    }
+
+    .content-desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 3vw;
+        position: relative;
+        top: -10vw;
+    }
+
+
+    .content-desktop .content--item-desktop {
+        position: relative;
+        top: -1.5vw;
+    }
+
+    .content-desktop .description-local {
+        padding: 0;
+        margin: 0;
+        width: 26vw;
+        height: 3.5vw;
+    }
+    .container-details-return .content-desktop .description-local label {
+        font-size: 0.6vw;
+        font-weight: 500;
+    }
+
+    .container-details-return .content-desktop .description-local p {
+        font-size: 1.22vw;
+        font-weight: bold;
+        margin-top: -1vw;
+    }
+
+    .container-details-return .content-desktop .description-local .content-item-desktop {
+        position: relative;
+        top: -0.5vw;
+    }
+
+    .container-details-return .content-desktop .description-local img {
+        margin-top: 0.8vw;
+    }
+
+    #cancelCallTaxi {
+        width: 15vw;
+        font-size: 1.5vw;
+        padding: 0;
+        height: 3.3vw;
+        border-width: 0.3vw;    
+        position: relative;
+        top: -10vw;
+    }
+
+    .container-info-return p {
+        position: relative;
+        top: -2.5vw;
+        left: -32.5vw;
+        font-size: 2vw;
+        color: #000;
+    }
+
+    #containerDetailsReturn {
+        height: 100vh;
+    }
+
+}
+
+.container-menu .container-logo .local-destiny ul#listEstablishment> li >  ul > li.another-destination{
+    width:100%;
+    padding: 2vw 5vw;
+    box-shadow:0 0 10px #ccc;
+    margin-top:3vw;
+    position: relative;
+    border-radius: 3vw;
+}
+.container-menu .container-logo .local-destiny ul#listEstablishment> li > ul >  li.another-destination > img {
+    width:20%;
+    display:block;
+    margin:auto;
+    position: relative;
+}
+.container-menu .container-logo .local-destiny ul#listEstablishment> li >  ul > li.another-destination > span{
+    width:100%;
+    text-align:center;
+    position: relative;
+    margin: auto;
+    padding: 0;
+    display: block;
+}
+.another-destination-form > div{
+    opacity: 0;
+    transition: opacity 1s;
+}
+.another-destination-form.active > div{
+    opacity: 1;
+    transition: opacity 1s;
+}
+.another-destination-form > div >  i.material-icons{
+    float: left;
+    font-size: 10vw;
+    padding: 0;
+    margin-top: 3vw;
+    width: 10vw;
+}
+.container-menu .container-logo .another-destination-form > div > h4{
+    text-align: center;
+    float: left;
+    font-size: 6vw;
+    width: 100%;
+    line-height: 1.5;
+}
+.container-menu .container-logo .another-destination-form > div > input{
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+.container-menu .container-logo .another-destination-form > div > input:focus{
+    box-shadow: 0 1px 0 0 #6c706d;
+}
+.container-select-paymentform-trip{
+    float: left;
+    width: 100%;
+}
+.another-destination-value{
+    margin: 2vw;
+    padding: 3vw;
+    background-color: #e9991a;
+    border-radius: 2vw;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: none;
+    width: calc(100% - 4vw);
+}
+
+.another-destination-value > .price-another{
+    text-align: center;
+    font-size: 6vw;
+    font-weight: bolder;
+}
+.another-destination-value > .address-another{
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#priceAnotherDestination > li {
+    text-align: center;
+}
+
+#priceAnotherDestination > li > .address-another{
+    font-size: 5vw;
+}
+#priceAnotherDestination > li > .price-another{
+    font-size: 10vw;
+}
+.confirm-search-trip{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60vw;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.confirm-search-trip.active{
+    display: flex;
+}
+.confirm-search-trip > h5{
+    font-size: 10vw;
+    font-weight: 600;
+    color: #e9991a;
+    text-transform: uppercase;
+}

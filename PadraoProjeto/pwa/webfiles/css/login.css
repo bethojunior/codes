@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+}
+
+body{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(-90deg, rgba(255, 128, 0, 1), rgb(240, 184, 33));
+}
+.container-login .logo-company{
+    width: 55%;
+    display: block;
+    margin: 5vw auto;
+}
+
+.container-login .form-login{
+    margin-top: 30vw;
+}
+.container-login .form-login .col.s12.input-field input{
+    border: 1vw solid #fff;
+    border-radius: 7vw;
+    padding: 1vw 10vw 0 5vw;
+    width: calc(90% - 20vw);
+    display: block;
+    margin: 0 auto 5vw;
+    color: #fff;
+}
+
+.container-login button{
+    background-color: #fff;
+    padding: 4vw 5vw;
+    text-decoration: none;
+    color: #e58815;
+    border-radius: 7vw;
+    display: block;
+    width: calc(90% - 5vw);
+    text-align: center;
+    margin: auto;
+    border: none;
+    font-weight: bolder;
+}
+.container-login button.active{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    border-radius: unset;
+    z-index: 99999;
+}
+.container-login .form-login .col.s12.input-field{
+    position: unset;
+}
+.container-login .form-login .col.s12.input-field:last-child{
+    display: none;
+}
+.container-login .form-login .col.s12.input-field i.material-icons{
+    position: absolute;
+    top: 4vw;
+    right: 10vw;
+    color: #fff;
+}
+.container-login .form-login .col.s12.input-field input::placeholder{
+    color: #fff;
+    opacity: 0.6;
+}
+.container-login .form-login .col.s12.input-field input.invalid{
+    box-shadow: none;
+}
+.container-login .form-login .col.s12.input-field input.invalid + label:after{
+    margin-top: -12vw;
+    margin-left: 12vw;
+}
+.container-login .form-login .col.s12.input-field input:focus{
+    box-shadow: none;
+}
+.container-login .more-info{
+    width: 100%;
+    margin-top: 10vw;
+}
+
+.container-login .more-info p{
+    text-align: center;
+    color: #fff;
+    font-size: 6vw;
+}
+
+.container-login .more-info a{
+    color: #fff;
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 5vw;
+    text-transform: uppercase;
+}
+
+.toast div{
+    text-align: center;
+}
+
+#menuLogin{
+    display: none;
+}
+.displayCenter{
+    text-align: center;
+    color: white;
+    font-family: 'Dosis', sans-serif;
+    padding-bottom: 2vw;
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    margin-top: 0vw;
+    width: 100%;
+    padding: 0 10vw;
+    align-items:center;
+}
+.centerSocial{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 100%;
+}
+.container-login .more-info #checkMobile .centerSocial .iconFace{
+    width: 10vw;
+    padding: 1vw;
+}
+.container-login .more-info.row #checkMobile .centerSocial .iconGoogle{
+    width: 11vw;
+    padding: 1vw;
+}
+
+.container-login .more-info.row #checkMobile .displayCenter hr{
+    /* width: 32vw; */
+    /* position: relative; */
+    /* top: -2.8vw; */
+    border-color: white;
+    width: 45%;
+}
+.abcRioButton.abcRioButtonBlue{
+    background-color: transparent;
+    height: 9vw;
+    width: 9vw;
+    border-radius: 50vw;
+}
+#checkMobile{
+    display: none;
+}
+.container-login .more-info.row #checkMobile .centerSocial .g-signin2 .abcRioButton.abcRioButtonBlue{
+    height: 9vw!important;
+    border-radius: 52vw!important;
+    width: 9vw!important;
+}
+.container-login .more-info.row #checkMobile .centerSocial .g-signin2 .abcRioButton.abcRioButtonBlue .abcRioButtonContentWrapper{
+    /*padding-top: 0.4vw;*/
+    /*padding-left: 0.4vw;*/
+    background-color: white;
+}
+.container-login .more-info.row #checkMobile .centerSocial .g-signin2 .abcRioButton.abcRioButtonBlue .abcRioButtonContentWrapper .abcRioButtonIcon{
+    padding: 1.7vw!important;
+}
+.container-login .more-info.row #checkMobile .centerSocial .g-signin2 .abcRioButton.abcRioButtonBlue .abcRioButtonContentWrapper .abcRioButtonIcon .abcRioButtonSvgImageWithFallback.abcRioButtonIconImage.abcRioButtonIconImage18{
+    margin: -0.3vw!important;
+}
+/* DESKTOP */
+@media (min-width: 992px){
+    .container-login{
+        margin: -2vw auto;
+        width: 50%;
+    }
+
+    #menuLogin{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        height: 6vw;
+        overflow: hidden;
+        background-color: #fff;
+    }
+
+    #menuLogin li {
+        float: right;
+    }
+
+    #menuLogin li:first-child a {
+        border: 0.15vw solid #ffa200;
+        border-radius: 2vw;
+        padding: 0.5vw 1.5vw 0.5vw 1.5vw;
+        margin-right: 6vw;
+        margin-left: 5vw;
+        margin-top: 1.2vw;
+        font-weight: bold;
+    }
+    #menuLogin li a {
+        display: block;
+        color: #000;
+        font-size: 1.5vw;
+        text-align: center;
+        padding: 2vw;
+        text-decoration: none;
+    }
+
+    #menuLogin .active img {
+        width: 5vw;
+        position: absolute;
+        margin-left: 4vw;
+        margin-top: -1.5vw;
+    }
+
+    .container-login .logo-company {
+        width: 28%;
+    }
+
+    .container-login .form-login {
+        margin-top: -1vw;
+    }
+
+    .container-login .form-login .col.s12.input-field input {
+        border: 0.3vw solid #fff;
+        padding: 0vw 10vw 0vw 2vw;
+        margin: 0 auto 2vw;
+        font-size: 1.4rem;
+    }
+    .container-login .form-login .col.s12.input-field button {
+        padding: 1vw;
+        width: calc(90% - 7vw);
+        font-size: 1.4rem;
+    }
+    .container-login .form-login .col.s12.input-field i.material-icons{
+        display: none;
+    }
+    .container-login .more-info{
+        margin-top: 3vw;
+    }
+    .container-login .more-info p{
+        font-size: 1.5vw;
+        text-decoration: none;
+        text-transform: none;
+    }
+    .container-login .more-info a{
+        font-size: 1.5vw;
+    }
+    .container-login .more-info.row #checkMobile .centerSocial .g-signin2 .abcRioButton.abcRioButtonBlue {
+        height: 4vw!important;
+        border-radius: 52vw!important;
+        width: 4vw!important;
+    }
+    .container-login .more-info #checkMobile .centerSocial .iconFace {
+        width: 6vw;
+        padding: 1vw;
+    }
+    .container-login .more-info.row #checkMobile .centerSocial .g-signin2 .abcRioButton.abcRioButtonBlue .abcRioButtonContentWrapper .abcRioButtonIcon .abcRioButtonSvgImageWithFallback.abcRioButtonIconImage.abcRioButtonIconImage18 svg{
+        transform: scale(2);
+    }
+}
+
+/* END DESKTOP */

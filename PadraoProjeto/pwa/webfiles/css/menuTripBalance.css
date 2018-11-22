@@ -1,0 +1,73 @@
+#navigate-steps {
+    cursor: pointer;
+}
+
+#steps-menu-trip-balance {
+    background: #ff9b00;
+    color: #fff;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+#steps-menu-trip-balance #title-trip-balance {
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: calc(36.5% - 1vw);
+}
+
+#steps-menu-trip-balance #navigate-steps img {
+    width: 40px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.menu-close {
+    top: 1vw;
+}
+
+#call-taxi-desktop {
+    display: none;
+}
+
+#callTaxiMenu {
+    display: none;
+}
+
+.menu-close {
+    top: 0.7vw;
+}
+
+@media (max-width: 991px) {
+    #steps-menu-trip-balance #title-trip-balance {
+        font-size: 5vw;
+        margin-left: calc(23% - 1vw);
+    }
+
+    .menu-close {
+        top: 2vw;
+    }
+
+    #steps-menu-trip-balance {
+        height: 101px
+    }
+}
+
+@media (max-width: 600px) {
+    #steps-menu-trip-balance #title-trip-balance {
+        font-size: 6vw;
+        margin-left: calc(8% - 1vw);
+    }
+
+    .menu-close {
+        top: 4vw;
+    }
+
+    #steps-menu-trip-balance {
+        height: 64px
+    }
+}

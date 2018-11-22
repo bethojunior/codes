@@ -1,0 +1,133 @@
+#noPay{
+    display: none;
+}
+#tripPay{
+    display: none;
+}
+body{
+    background-color: white;
+}
+.inconInfo{
+    color: #cacaca;
+    right: 0;
+    position: absolute;
+    margin-top: -2vw;
+    margin-right: 2vw;
+}
+.row.generealInfoTrip .alignCenter{
+    text-align: center;
+}
+.row.generealInfoTrip .placeOne {
+    margin: 2vw;
+    margin-left: -2vw;
+}
+.row.generealInfoTrip .placeOne .border{
+    border-left: solid #3AAA35;
+    box-shadow: 1px 1px 20px 0px rgba(0,0,0,0.26);
+    max-width: 80%;
+}
+.row.generealInfoTrip .placeOne img{
+    width: 12%;
+}
+.row.generealInfoTrip .marginDivTwo img{
+    width: 10%;
+}
+.row.generealInfoTrip .placeTwo{
+    margin: 2vw;
+    margin-left: -2vw;
+}
+.row.generealInfoTrip .placeTwo .border{
+    box-shadow: 1px 1px 20px 0px rgba(0,0,0,0.26);
+    max-width: 80%;
+    border-left: solid #E30613;
+}
+.row.generealInfoTrip .placeTwo img{
+    width: 12%;
+}
+.row.generealInfoTrip .marginDivTwo img{
+    width: 10%;
+}
+.row.generealInfoTrip .marginDivTwo{
+    padding-top: 15vw;
+}
+.valueTrip{
+    font-weight: 600;
+    margin-top: 5vw;
+    font-size: 10vw;
+}
+.descriptionTrip{
+    font-size: 4vw;
+}
+.fs-6{
+    font-size: 6vw;
+}
+.header{
+    margin-top: 10vw;
+}
+.footerPage{
+    margin-top: 5vw;
+    font-size: 6vw;
+}
+.ecoGeral{
+    background-color: white;
+}
+.row.ecoGeral .col.s12.bodyPage{
+    margin-top: 5vw;
+}
+.row.ecoGeral .col.s12.images .col.s6 span.firstValueCo{
+    position: absolute;
+    color: black;
+    left: 35vw;
+    top: 35.5vw;
+    font-weight: 600;
+}
+.row.ecoGeral .col.s12.images .col.s6 .title{
+    position: absolute;
+    margin-top: 2vw;
+}
+.row.ecoGeral .col.s12.images .col.s6 .sub{
+    font-size: 2.5vw;
+}
+.row.ecoGeral .col.s12.images .col.s6.carTwo .sub{
+    font-size: 2.5vw;
+}
+.row.ecoGeral .col.s12.images .col.s6.carTwo .title{
+    font-size: 2.8vw;
+    position: absolute;
+    margin-top: 2vw;
+}
+.row.ecoGeral .col.s12.images .col.s6.carTwo span.secondValueEco{
+    position: absolute;
+    font-size: 3vw;
+    right: 9.8vw;
+    top: 36vw;
+    font-weight: 600;
+}
+.row.ecoGeral .col.s12.bodyPage .col.s12.firstText{
+    text-align: center;
+    font-size: 6vw;
+}
+.row.ecoGeral .col.s12.bodyPage .co2{
+    font-size: 25vw;
+    font-weight: 600;
+    display: block;
+    margin-top: -5vw;
+}
+.row.ecoGeral .col.s12.bodyPage .subLeft{
+    float: right;
+    margin-top: -15vw;
+    margin-right: 20vw;
+}
+.row.ecoGeral .col.s12.divKnowMore{
+    margin-left: 10vw;
+    width: 80%;
+}
+.row.ecoGeral .col.s12.divKnowMore button.col.s12.btn.large{
+    font-size: 5vw;
+    background-color: rgb(0 , 164 , 58);
+    font-weight: 600;
+}
+.row.ecoGeral footer.col.s12.footerPage{
+    margin-top: 3vw;
+    text-align: center;
+}

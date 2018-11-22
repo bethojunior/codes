@@ -1,0 +1,195 @@
+.container-chat-trip {
+    display: none;
+    position: fixed;
+    z-index: 202;
+    width: 100%;
+    height: calc(100% - 34vw);
+    top: 17vw;
+}
+.container-chat-trip .info-client {
+    position: absolute;
+    float: left;
+    width: 100vw;
+    height: 100%;
+    background-color: #fff;
+    overflow-y: auto;
+}
+.container-chat-trip .info-client i.material-icons {
+    position: absolute;
+    color: #E9991A;
+    float: left;
+    font-size: 10vw;
+    padding-bottom: 10vw;
+    padding-right: 17vw;
+}
+.margin-default-chat {
+    width: 95%;
+    margin: auto;
+    display: block;
+}
+.container-chat-trip .info-client .margin-default-chat h4 {
+    text-align: center;
+    font-size: 7vw;
+    font-weight: bolder;
+}
+.container-chat-trip .info-client .margin-default-chat .container-number-chat {
+    border: 1vw solid rgb(102, 204, 102);
+    border-radius: 15vw;
+    padding: 1vw 12.5vw;
+    font-size: 6vw;
+    position: relative;
+    text-align: center;
+}
+.contentDataSend{
+    position: fixed;
+    padding: 5vw;
+    padding-top: 0;
+    height: 17vw;
+    bottom: 0;
+    z-index: 300;
+}
+.container-chat-trip .info-client .margin-default-chat .continer-messages {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 2vw;
+    overflow-y: auto;
+}
+.container-chat-trip .info-client .margin-default-chat .continer-messages ul {
+    width: 100%;
+}
+.contentDataSend .message-trip-driver {
+    box-shadow: 1px 1px 20px 0px rgba(0,0,0,0.26);
+    font-size: 4.5vw;
+    background-color: rgb(227, 227, 227);
+    margin-top: 1vw;
+    border: none;
+    box-shadow: none;
+    border-radius: 2vw;
+    padding: 0 4vw;
+    width: calc(80% - 8vw);
+    margin-bottom: 0;
+    float: left;
+    overflow-y: auto;
+    min-height:  10vw;
+    height: 12vw;
+}
+.contentDataSend .message-trip-driver:focus {
+    border-bottom: 1px solid rgb(227, 227, 227) !important;
+    -webkit-box-shadow: 0 1px 0 0 rgb(227, 227, 227) !important;;
+    box-shadow: 0 1px 0 0 rgb(227, 227, 227) !important;;
+}
+.continer-messages ul li {
+    padding: 5vw 0 2vw 5vw;
+    position: relative;
+}
+.continer-messages .message-client .container-message {
+    background-color: rgb(118, 118, 120);
+}
+.continer-messages .message-driver .container-message {
+    background-color: rgb(255, 154, 0);
+    margin: 0 10vw;
+}
+.continer-messages .message-client .container-message,
+.continer-messages .message-driver .container-message {
+    width: 80%;
+    color: #fff;
+    border: none;
+    border-radius: 1vw;
+    text-align: right;
+}
+.continer-messages .message-client .container-message .time-message {
+    float: right;
+}
+.continer-messages .message-driver .container-message .time-message {
+    text-align: right;
+}
+.continer-messages .message-driver .container-message .time-message,
+.continer-messages .message-client .container-message .time-message {
+    font-size: 3vw;
+    margin: 0 1vw 0;
+    width: 95%;
+    padding-top: 1vw;
+    font-weight: bolder;
+}
+.continer-messages li.message-client::before,
+.continer-messages li.message-driver::before {
+    content: "";
+    position: absolute;
+    border-top: 4vw solid transparent;
+    border-bottom: 4vw solid transparent;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border-radius: 5vw;
+}
+.continer-messages li.message-client::before {
+    left: 2.5vw;
+    transform: rotate(135deg);
+    top: 2.45vw;
+    border-right: 4vw solid rgb(118, 118, 120);
+}
+.continer-messages li.message-driver::before {
+    right: 7vw;
+    transform: rotate(51deg);
+    top: 2.1vw;
+    border-right: 2.5vw solid rgb(255, 154, 0);
+}
+.continer-messages .message-client .container-message .message,
+.continer-messages .message-driver .container-message .message {
+    margin: 0 4vw;
+    font-size: 4.5vw;
+    text-align: justify;
+}
+.continer-messages .message-client .container-message .message {
+    text-align: justify;
+}
+.continer-messages .message-driver .container-message .message {
+    text-align: justify;
+}
+.contentDataSend .btn-send-message {
+    width: calc(20% - 4vw);
+    float: left;
+    margin: 1vw 0 3vw 4vw;
+    border: none;
+    border-radius: 2vw;
+    padding: 2vw;
+    height: 12vw;
+}
+.contentDataSend .btn-send-message img{
+    width: 80%;
+}
+.contentDataSend .btn-send-message:focus{
+    background-color: rgb(227, 227, 227);
+}
+
+.info-chat-trip{
+    position: fixed;
+    width: 100%;
+    height: 17vw;
+    border-bottom: 1px solid #ccc;
+}
+
+.info-chat-trip > h4{
+    text-align: center;
+    position: absolute;
+    width: 60%;
+    font-size: 6vw;
+    line-height: 9vw;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    margin: 5vw auto;
+}
+
+.info-chat-trip > a {
+    z-index: 2;
+    float: left;
+    font-size: 10vw;
+    color: rgb(255, 154, 0);
+}
+
+.info-chat-trip > a > i.material-icons{
+    font-size: 10vw;
+    padding: 5vw;
+}
