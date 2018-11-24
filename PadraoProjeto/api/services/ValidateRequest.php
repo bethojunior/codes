@@ -32,6 +32,9 @@ class ValidateRequest
         return false;
     }
 
+    static public function AccessDenied(){
+        return json_encode(['result' => false, 'message' => 'Token inválido']);
+    }
 
 
 }
