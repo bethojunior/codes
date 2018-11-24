@@ -1,0 +1,40 @@
+#preloadPadrao {
+    position: absolute;
+    top: 0;
+    margin-top: 15vw;
+    margin-left: 48%;
+    display: none;
+}
+.navUltil{
+    background-color: brown;
+}
+.pointer{
+    cursor: pointer;
+}
+.colorBlue{
+    color: blue;
+}
+i{
+    cursor: pointer;
+}
+a {
+    color: black;
+}
+.fontMontserrat{
+    font-family: "Montserrat";
+}
+.fs-3{
+    font-size: 3vw;
+}
+.fs-4{
+    font-size: 4vw;
+}
+.fs-5{
+    font-size: 5vw;
+}
+.fs-6{
+    font-size: 6vw;
+}
+.fs-7{
+    font-size: 7vw;
+}
