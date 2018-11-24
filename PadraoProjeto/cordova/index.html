@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="google-signin-client_id" content="<?=Host::getIdGoogle()?>">
+    <link href="webfiles/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="webfiles/css/utils/assets.css">
+    <link rel="stylesheet" href="webfiles/css/utils/toastr.css">
+    <link rel="stylesheet" href="webfiles/css/fonts-google/Dosis.css">
+    <link rel="stylesheet" href="webfiles/css/preload.css">
+    <link rel="stylesheet" href="webfiles/css/mapa/Popup.css">
+    <link rel="stylesheet" href="webfiles/css/modalInfoReturn.css">
+    <link rel="stylesheet" href="webfiles/css/vai.css">
+    <link href="webfiles/css/material-icons.css"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Source+Sans+Pro" rel="stylesheet">
+    <style>
+        #containerViews{
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        .view-client-map{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="containerViews">
+
+</div>
+<script src="cordova.js" defer></script>
+<script type="text/javascript" src="webfiles/js/libs/jquery-3.2.1.min.js" defer></script>
+<script type="text/javascript" src="webfiles/js/libs/jquery.cookie.js" defer></script>
+<script type="text/javascript" src="webfiles/js/libs/jquery.mask.js" defer></script>
+<script type="text/javascript" src="webfiles/js/libs/pusher.min.js" defer></script>
+<script type="text/javascript" src="webfiles/js/libs/sweetalert.min.js" defer></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type="text/javascript" src="webfiles/js/service/ElementProperty.js" defer></script>
+<script type="text/javascript" src="webfiles/js/libs/sweetalert.min.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/PathUrl.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/controller.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/manager.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/Host.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/windowResize.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/Popup.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/Log.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/Session.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/DateCustom.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/LocalStorage.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/toastr.min.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/OptionElement.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/ConnectionServer.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/Mask.js"></script>
+<script type="text/javascript" src="webfiles/js/service/EventTouche.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/Push.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/WebSocket.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/Progress.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/Storaged.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/checkNotifications.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/MappingSpot.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/Spot.js" defer></script>
+<script type="text/javascript" src="webfiles/js/service/Position.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/SwalCustom.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/FileUpload.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/statusTrip.js" defer></script>
+<script type="text/javascript" src="webfiles/js/utils/NotificationBackground.js" defer></script>
+<script type="text/javascript" src="webfiles/js/libs/vai.js" defer></script>
+<script src="webfiles/js/modulos/init/initEvents.js" defer></script>
+<script src="webfiles/js/views/MainView.js" defer></script>
+<script src="webfiles/js/views/ClientView.js" defer></script>
+<script src="webfiles/js/views/TripView.js" defer></script>
+<script defer>
+    setTimeout(function () {
+        try {
+            const route = Route.getClassAndAction();
+
+            ManagerView[route.classView][route.actionName]();
+        }catch (error) {
+            Log.write(error,level.SISTEMA,logType.ERROR);
+        }
+    },500);
+</script>
+</body>
+</html>

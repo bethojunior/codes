@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+*{
+    margin: 0;
+    padding: 0;
+}
+.generalChat{
+    background-color: #FFC100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.colorWhite{
+    color: white;
+}
+#backToIndex{
+    font-size: 12vw;
+    padding: 2vw;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.generalChat{
+    font-family: "Montserrat";
+}
+.generalChat .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#textClient{
+    margin-top: 5%;
+    width: 86%;
+    height: 80vw;
+    border-radius: 1vw;
+    padding: 2vw;
+}
+#buttonSend{
+    border: solid 1px transparent;
+    background-color: #e0b541;
+    padding: 2vw;
+    padding-bottom: 3vw;
+    padding-top: 3vw;
+    border-radius: 2vw;
+    color: white;
+    margin-top: 2vw;
+    width: 86%;
+    text-align: center;
+}
+#buttonKeyboard{
+    display: none;
+    border: solid 1px transparent;
+    background-color: #e0b541;
+    padding: 2vw;
+    border-radius: 1vw;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.generalChat .center .logo{
+    width: 50vw;
+    margin-top: 1vw;
+}
+.generalChat .center #sending{
+    position: absolute;
+    left: 0;
+    margin-left: 8vw;
+    bottom: 55%;
+}
+.generalChat .center #sending span.active{
+    background-color: gray;
+    border-radius:1vw ;
+    padding: 1vw;
+    color: white;
+}

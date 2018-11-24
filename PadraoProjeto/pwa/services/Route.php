@@ -34,6 +34,7 @@ class Route extends Controller
             call_user_func(array($this->class, $this->action));
             return;
         }
+
     }
 
     /**
@@ -41,7 +42,7 @@ class Route extends Controller
      */
     private function getMethodDefault($path)
     {
-        $path[0] = $this->isPathValidate($path[0], "" ,"index");
+        $path[0] = $this->isPathValidate($path[0], "" ,"login");
 
         $this->class = new DefaultController();
 
@@ -64,7 +65,7 @@ class Route extends Controller
     private function getController($path, $index = 0)
     {
 
-        $path[$index] = $this->isPathValidate($path[$index], "call" ,"login");
+        $path[$index] = $this->isPathValidate($path[$index], "home" ,"login");
 
         if (!isset($path[$index])) {
             return false;

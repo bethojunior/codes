@@ -11,3 +11,15 @@ function searchNotification() {
         }
     }
 }
+
+
+            elementProperty.addEventInElement('#searchDriver' , 'oninput' , function(){
+                keys = this.value;
+                elementProperty.getElement('.heightDrivers' , element => {
+                    element.hidden = true;
+                    if(element.getAttribute("value").toUpperCase().startsWith(keys.toUpperCase())){
+                        console.log(this.value);
+                        element.hidden = false;
+                    }
+                });
+            });

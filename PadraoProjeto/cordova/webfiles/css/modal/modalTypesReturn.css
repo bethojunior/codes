@@ -1,0 +1,68 @@
+.modal-switch-type-return{
+    position: absolute;
+    z-index: 30;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal-switch-type-return.active{
+    display: flex;
+}
+.modal-switch-type-return > div{
+    background-color:#fff;
+    width:80%;
+    padding:2vw;
+    border-radius:5px;
+}
+.modal-switch-type-return > div > i{
+    font-size:40vw;
+    text-align:center;
+    width:100%;
+    color:#dd1515;
+}
+.modal-switch-type-return > div > h4{
+    font-size:10vw;
+    text-align:center;
+    color:#606060;
+}
+.modal-switch-type-return > div > p{
+    text-align:center;
+    font-size:5.5vw;
+    color:#a1a1a1;
+}
+.modal-switch-type-return > div > button{
+    display:block;
+    margin: 2vw auto;
+    width:60%;
+    padding:2.5vw 0;
+    font-size:5vw;
+    background-color:#e8a43d;
+    border:none;
+    color:#fff;
+}
+.modal-switch-type-return > div > ul{
+    display:flex;
+    justify-content:space-evenly;
+    list-style:none;
+    margin:2.5vw 0;
+}
+.modal-switch-type-return > div > ul > li > img{
+    width:70%;
+    display:block;
+    margin:auto;
+}
+.modal-switch-type-return > div > ul > li > p{
+    text-align:center;
+    color:#e8a43d;
+    font-size:6vw;
+}
+.modal-switch-type-return > div > ul > li > p > span{
+    font-size:3vw;
+}
+.modal-switch-type-return > div > ul > li {
+    margin:1vw;
+}

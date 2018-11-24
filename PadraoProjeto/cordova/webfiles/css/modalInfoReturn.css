@@ -1,0 +1,62 @@
+#modalInfoReturn{
+    display: none;
+    transition: 2s;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+#modalInfoReturn.active{
+    transition: 2s;
+    display: flex;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+#modalInfoReturn.active hr{
+    border-color: #FFBE00;
+}
+#modalInfoReturn.active > div{
+    position: relative;
+    width: 85%;
+    height: auto;
+    z-index: 999;
+    padding: 2vw;
+    border-radius: 1vw;
+    box-shadow: 1px 1px 20px 0 rgba(0,0,0,0.26);
+    background-color: #fff;
+}
+#modalInfoReturn.active > div > .valueFixed{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#modalInfoReturn.active > div > .valueFixed > .col-3{
+    width:  30%;
+}
+#modalInfoReturn.active > div > .valueFixed > .col-3 >  img.imgReturn{
+    max-width: 100%;
+}
+#modalInfoReturn.active .valueFixed .col-7{
+    margin-top: 2%;
+    width:  70%;
+}
+#modalInfoReturn.active > div > .material-icons{
+    position: absolute;
+    right: 0;
+    padding-right: 2vw;
+}
+#modalInfoReturn.row #listInfo .btn{
+    padding: 1vw;
+    color: white;
+    text-align: center;
+    background-color: #FFA400;
+    -webkit-border-radius: 5vw 0vw 5vw 0vw;
+    
+    -moz-border-radius: 5vw 0vw 5vw 0vw;
+    border-radius: 5vw 0vw 5vw 0vw;
+}

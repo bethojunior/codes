@@ -1,0 +1,69 @@
+<div class='container-list-trips'>
+    <div class="haeder-page">
+        <i class="go-back material-icons">arrow_back</i>
+        <span>Minhas viagens</span>
+        <i id="filterList" class="material-icons">filter_list</i>
+    </div>
+    <ul id="tripsClient">
+
+    </ul>
+
+
+    <div id="modalDataRunSelect" class="row modal modal-fixed-footer">
+        <div class="modal-content">
+            <span class="col s12 alignCenter fs-4">Detalhes</span>
+            <hr>
+            <span class="col s12 alignLeft">Data:    <span id="dateRun">       </span></span>
+            <span class="col s12 alignLeft">Origem:  <span id="originAddress"> </span></span>
+            <br>
+            <span class="col s12 alignLeft">Destino: <span id="destinyAdress"> </span> </span>
+            <br>
+            <span class="col s12 alignLeft">Valor:   <span id="valueRunning"></span>
+                <br>
+                <span class="colorRed" id="checkIfCodeRed"></span></span>
+
+        </div>
+
+        <div class="padding4">
+
+            <div id="mountTimeline" class="modalSecond">
+
+            </div>
+
+            <div class="divider"></div>
+
+            <div id="detailsRunning" class="detailsRunning">
+            </div>
+        </div>
+        <br>
+
+        <div class="modal-footer">
+
+            <a class="modal-action modal-close waves-effect waves-green btn-flat ">OK</a>
+        </div>
+    </div>
+</div>
+
+<div id="openModalFilter" class="row modal ">
+    <h4>Filtrar por:</h4>
+    <br>
+    <form>
+        <p>
+            <input name="status" type="radio" id="all" value="all"/>
+            <label for="all">Todos</label>
+        </p>
+        <p>
+            <input name="status" type="radio" id="finished" value="finished"/>
+            <label for="finished">Finalizado</label>
+        </p>
+        <p>
+            <input name="status" type="radio" id="canceled" value="canceled"/>
+            <label for="canceled">Cancelado</label>
+        </p>
+    </form>
+
+    <div class="modal-footer">
+        <div class="divider"></div>
+        <a id="makeFilter" class=" waves-effect waves-green btn-flat ">Filtrar</a>
+    </div>
+</div>

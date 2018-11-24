@@ -1,0 +1,8 @@
+.menuGeneral{
+    background-color: #FFB901;
+    padding: 2vw;
+}
+.menuGeneral .material-icons{
+    color: white;
+    font-size: 9vw;
+}

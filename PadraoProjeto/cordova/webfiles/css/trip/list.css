@@ -1,0 +1,63 @@
+.container-list-trips{
+    background-color: #E8E8E8;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.container-list-trips > .haeder-page{
+    margin-bottom: 0;
+    background-color: #fff;
+    width: calc(100% - 4vw);
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 2vw;
+    justify-content: space-between;
+    align-items: center;
+    color: #ec8d27;
+    height: 14vw;
+}
+.container-list-trips > .haeder-page > i{
+    font-size:10vw;
+}
+.container-list-trips > .haeder-page > span{
+    font-size:6vw;
+    text-transform:uppercase;
+}
+.container-list-trips > ul {
+    position:absolute;
+    height: calc(100% - 20vw);
+    width: 100%;
+    overflow-y: auto;
+}
+.container-list-trips > ul > li{
+    background-color:#fff;
+    margin: 1vw 2vw 5vw;
+    box-shadow: 0 0 10px #6b6b6b;
+    border-radius:1vw;
+}
+.container-list-trips > ul > li > img{
+    width: 100%;
+    height: 40vw;
+}
+
+.container-list-trips > ul > li > div.detail-trip{
+    padding:0 0 0.5vw;
+}
+.container-list-trips > ul > li > div.detail-trip > div{
+    display:flex;
+    justify-content: space-between;
+    margin: 0 5vw;
+    font-size: 5vw;
+}
+
+.container-list-trips > ul > li > div.detail-trip > span{
+    display:flex;
+    justify-content: space-between;
+    margin: 0.5vw 5vw;
+    font-size: 4vw;
+    color: #737171;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

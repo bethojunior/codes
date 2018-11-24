@@ -1,0 +1,81 @@
+body{
+    background-color: #FAFAFA;
+}
+.generalProfile{
+    margin: 0;
+    padding: 0;
+}
+.generalProfile .divImageUser{
+    width: 23vw;
+    margin-left: 4vw;
+    margin-top: 6vw;
+}
+.generalProfile .divImageUser #imageUserProfile{
+    /*max-width: 100%;*/
+    height: 25vw;
+    border-radius: 20vw;
+    width: 25vw;
+}
+.generalProfile .divImageUser #editPhotoUserProfile{
+    position: absolute;
+    margin-top: 16%;
+    margin-left: 16%;
+    background-color: #FFB901;
+    color: white;
+    border-radius: 14vw;
+    padding: 0.5vw;
+}
+.generalProfile .midGeneral{
+    margin-top: 4vw;
+    padding-left: 5vw;
+}
+.generalProfile .midGeneral .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 6vw;
+}
+.generalProfile .midGeneral input{
+    border: none;
+    background-color: #D1D1D1;
+    padding: 2vw;
+    color: white;
+    border-radius: 0.5vw;
+    width: 88%;
+}
+.generalProfile .midGeneral .name #nameProfileUser{
+    margin-top: 1vw;
+}
+.generalProfile .midGeneral .email{
+    margin-top: 4vw;
+}
+.generalProfile .midGeneral .telefone{
+    margin-top: 4vw;
+}
+.generalProfile .midGeneral .senha{
+    margin-top: 4vw;
+}
+.generalProfile .midGeneral #btnSave{
+    color: white;
+    background-color: #FFB901;
+    padding: 2vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin: 5vw;
+    font-size: 7vw;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 1vw;
+}
+.generalProfile #btnFooter{
+    display: none;
+    position: fixed;
+    color: white;
+    font-size: 7vw;
+    padding: 1vw;
+    text-transform: uppercase;
+    background-color: #FFB901;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
