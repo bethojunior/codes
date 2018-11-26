@@ -8,7 +8,6 @@ class UserController{
     function __construct(){
         $initValidate   = new ValidateRequest();
         $this->validate = $initValidate->checkPermission();
-
         if(!$initValidate->checkPermission())
             throw new Exception(ValidateRequest::AccessDenied());
     }

@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: hgome
+ * User: hgomes
  * Date: 24/11/2018
  * Time: 18:46
  */
@@ -12,24 +12,29 @@ class ValidateRequest
     public $token;
 
     function __construct(){
-
-        if(isset(getallheaders()['id']))
-            $this->id = getallheaders()['id'];
-
-        if(isset(getallheaders()['token']))
-            $this->token = getallheaders()['token'];
-
+        if(!isset(getallheaders()['id']) && !isset(getallheaders()['token'])) {
+            $this->checkPermission();
+        }
+        $this->id = getallheaders()['id'] ?? null;
+        $this->token = getallheaders()['token'] ?? null;
     }
 
     public function checkPermission(){
+
         $thisRoute = Permission::checkIsPublicRoute();
-        if($thisRoute){
-            $verify = self::checkUser($this->id , $this->token);
-            if($verify)
+        $verify = self::checkUser($this->id , $this->token);
+
+        if(!$thisRoute){
+            if($verify){
                 return true;
+            }
             return false;
         }
+
+        if($verify)
+            return true;
         return false;
+
     }
 
     public static function checkUser($id , $token){
