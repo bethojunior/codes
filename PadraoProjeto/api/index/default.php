@@ -13,51 +13,46 @@
     startIncludes('../mvc/controller');
     require_once('../mvc/lib/WideImage.php');
     startIncludes('../mvc/dao');
-    
 
 
+try {
     if (!isset($_GET['url'])) {
         //NOME DE SUA CLASSE  , NOME DO METHOD
-        Controller::redirectControllerAction("home","login");
+        Controller::redirectControllerAction("home", "login");
         return;
     }
-    
-    $params = explode('/', $_GET['url' ]);
-    
+
+    $params = explode('/', $_GET['url']);
     if (!isset($params[0])) {
         //NOME DE SUA CLASSE  , NOME DO METHOD
-        Controller::redirectControllerAction("home","login");
+        Controller::redirectControllerAction("home", "login");
         return;
     }
-    
     $class = $params[0];
-    
     if (isset($params[1])) {
         $action = "action" . $params[1];
     }
-    
     $classController = $class . 'Controller';
-    
-    
     if (!class_exists($classController)) {
         Controller::renderView("404");
         return;
     }
     $obj = new $classController();
-    
     if (!isset($action) || !method_exists($obj, $action)) {
         return;
     }
-    
     if (Permission::checkActionPermission($action) || isset($_SESSION['user_object']) || isset($_POST['token'])) {
         $obj->$action();
-    }else{
+    } else {
         //NOME DE SUA CLASSE  , NOME DO METHOD
-        Controller::redirectControllerAction("home","login");
+        Controller::redirectControllerAction("home", "login");
     }
-    
-    
-    function startIncludes($path)
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+
+function startIncludes($path)
     {
         foreach (scandir($path) as $filename) {
             $file = $path . '/' . $filename;

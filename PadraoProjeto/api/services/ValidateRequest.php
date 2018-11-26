@@ -22,9 +22,13 @@ class ValidateRequest
     }
 
     public function checkPermission(){
-        $verify = self::checkUser($this->id , $this->token);
-        if($verify)
-            return true;
+        $thisRoute = Permission::checkIsPublicRoute();
+        if($thisRoute){
+            $verify = self::checkUser($this->id , $this->token);
+            if($verify)
+                return true;
+            return false;
+        }
         return false;
     }
 

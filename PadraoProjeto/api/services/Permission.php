@@ -22,4 +22,19 @@ class Permission
         }
         return $return;
     }
+
+    public static function checkIsPublicRoute()
+    {
+        $publics = ['user/Authenticate'];
+
+        $url = $_GET['url'];
+
+        foreach ($publics as $public) {
+            if (strpos(strtolower($url), strtolower($public)) !== false)
+                return true;
+        }
+
+        return false;
+    }
+
 }

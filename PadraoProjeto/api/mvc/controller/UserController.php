@@ -8,6 +8,9 @@ class UserController{
     function __construct(){
         $initValidate   = new ValidateRequest();
         $this->validate = $initValidate->checkPermission();
+
+        if(!$initValidate->checkPermission())
+            throw new Exception(ValidateRequest::AccessDenied());
     }
 
     public function actionAuthenticate(){
@@ -28,28 +31,20 @@ class UserController{
 
     public function actionInsertUser(){
 
-        $check = $this->validate;
-
         $token =  base64_encode(rand (1 , 150));
 
-        if($check){
-            $name     = $_POST['name'];
-            $email    = $_POST['email'];
-            $pass     = $_POST['pass'];
+        $name     = $_POST['name'];
+        $email    = $_POST['email'];
+        $pass     = $_POST['pass'];
 
-            if(!self::checkEmail($email)){
-                $userDao = new UserDao();
-                $return = $userDao->insertUser($name , $email , $pass , $token ,true);
-                echo $return;
-                return;
-            }
-            echo json_encode(['result' => false, 'message' => 'Email existe']);
-            return;
+        if(!self::checkEmail($email)){
+            $userDao = new UserDao();
+            $return = $userDao->insertUser($name , $email , $pass , $token ,true);
+            echo $return;
+            return true;
         }
 
-        echo ValidateRequest::AccessDenied();
-
-
+        echo ApiResponse::getResponse(false , "Email existe");
     }
 
     static public function checkEmail($email){
