@@ -12,11 +12,12 @@ class ValidateRequest
     public $token;
 
     function __construct(){
-        if(!isset(getallheaders()['id']) && !isset(getallheaders()['token'])) {
+
+        if(!isset(getallheaders()['id']) && !isset(getallheaders()['token'])){
             $this->checkPermission();
         }
-        $this->id = getallheaders()['id'] ?? null;
-        $this->token = getallheaders()['token'] ?? null;
+        $this->id = getallheaders()['id'] ?? false;
+        $this->token = getallheaders()['token'] ?? false;
     }
 
     public function checkPermission(){
@@ -24,16 +25,16 @@ class ValidateRequest
         $thisRoute = Permission::checkIsPublicRoute();
         $verify = self::checkUser($this->id , $this->token);
 
-        if(!$thisRoute){
+        if($thisRoute){
             if($verify){
-                return true;
+                return $verify;
             }
-            return false;
+            return $thisRoute;
         }
 
-        if($verify)
-            return true;
-        return false;
+        if(!$verify)
+            return false;
+        return true;
 
     }
 
