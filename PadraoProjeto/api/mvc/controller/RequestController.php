@@ -3,18 +3,20 @@
     
     class RequestController{
 
-        const ENTREGUE   = "ENTREGUE";
-        const AGUARDANDO = "AGUARDANDO";
-
         public function actionGetAllRequests(){
 
-            $status = $_POST['status'];
+            $check = ValidateRequest::checkPermission($_POST);
 
-            $requestDao = new RequestDao();
-            $result = $requestDao->getAllRequestByStatus($status);
+            if($check){
+                $requestDao = new RequestDao();
+                $result = $requestDao->getAllRequestByStatus($status);
 
-            echo $result;
-            return $result;
+                echo $result;
+                return $result;
+            }
+
+            echo ValidateRequest::AccessDenied();
+
         }
 
         public function actionFinishRequest(){

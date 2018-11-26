@@ -19,7 +19,7 @@ class UserDao extends BaseDao{
                     "message" => "Cliente encontrado",
                 ));
             }
-            echo json_encode(array(
+            return json_encode(array(
                 "status" => false,
                 "data" => $all,
                 "message" => "Dados não conferem",
@@ -27,7 +27,7 @@ class UserDao extends BaseDao{
             
             
         }catch(PDOException $e){
-            echo false;
+            return false;
         }
     }
 

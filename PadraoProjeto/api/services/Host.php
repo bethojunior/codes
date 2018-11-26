@@ -10,9 +10,8 @@ class Host
 {
     public static function getLocal()
     {
-        $hostLocal = "//";
-        $hostTeste = "/apisales/";
+        $hostLocal = "/apisales/";
         $hostProduct = "/";
-        return $hostTeste;
+        return $hostLocal;
     }
 }

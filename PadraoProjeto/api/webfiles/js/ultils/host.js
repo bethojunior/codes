@@ -1,4 +1,4 @@
-const LOCAL = "http://localhost/barkanas/";
+const LOCAL = "http://localhost/apisend.com.br/";
 const PRODUCTIONS = "/";
 
 const HOST = LOCAL;

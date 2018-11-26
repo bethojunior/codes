@@ -8,16 +8,27 @@
 
 class ValidateRequest
 {
-    static public function checkPermission($data){
-        $id    = $data["iduser"];
-        $token = $data["token"];
-        $verify = self::checkUser($id , $token);
+    public $id;
+    public $token;
 
-        if($verify)
-            return true;
+    function __construct(){
+
+        if(isset(getallheaders()['id']))
+            $this->id = getallheaders()['id'];
+
+        if(isset(getallheaders()['token']))
+            $this->token = getallheaders()['token'];
+
     }
 
-    static function checkUser($id , $token){
+    public function checkPermission(){
+        $verify = self::checkUser($this->id , $this->token);
+        if($verify)
+            return true;
+        return false;
+    }
+
+    public static function checkUser($id , $token){
 
         $userDao = new UserDao();
         $return = $userDao->checkUser($id);
@@ -35,6 +46,5 @@ class ValidateRequest
     static public function AccessDenied(){
         return json_encode(['result' => false, 'message' => 'Token inválido']);
     }
-
 
 }

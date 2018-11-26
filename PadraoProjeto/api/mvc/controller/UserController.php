@@ -2,7 +2,13 @@
 
     
 class UserController{
-    
+
+    private $validate;
+
+    function __construct(){
+        $initValidate   = new ValidateRequest();
+        $this->validate = $initValidate->checkPermission();
+    }
 
     public function actionAuthenticate(){
 
@@ -14,13 +20,15 @@ class UserController{
 
         if($return){
             echo $token;
+            return false;
         }
 
+        echo $token;
     }
 
     public function actionInsertUser(){
 
-        $check = ValidateRequest::checkPermission($_POST);
+        $check = $this->validate;
 
         $token =  base64_encode(rand (1 , 150));
 
@@ -39,7 +47,7 @@ class UserController{
             return;
         }
 
-        echo json_encode(['result' => false, 'message' => 'Token inválido']);
+        echo ValidateRequest::AccessDenied();
 
 
     }
@@ -52,8 +60,7 @@ class UserController{
 
     static private function updateTokenUser($email , $pass ,  $token){
         $userDao = new UserDao();
-        $return = $userDao->updateTokenUser($email , $pass ,$token);
-        return $return;
+        return $userDao->updateTokenUser($email , $pass ,$token);
     }
 
 
