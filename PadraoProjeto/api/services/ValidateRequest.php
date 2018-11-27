@@ -54,7 +54,7 @@ class ValidateRequest
     }
 
     static public function AccessDenied(){
-        return json_encode(['result' => false, 'message' => 'Token inválido']);
+        return json_encode(['result' => false, 'message' => 'Acesso negado']);
     }
 
 }
