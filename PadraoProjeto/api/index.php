@@ -1,3 +1,7 @@
 <?php
+    $prdoduction = false;
 
-    header("Location: index/default.php");
+    if(!$prdoduction)
+        header("Location: index/default.php");
+
+    header("Location: https://apisales.betho.com.br/index/default.php");

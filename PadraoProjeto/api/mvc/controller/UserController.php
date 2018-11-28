@@ -25,7 +25,7 @@ class UserController{
             return false;
         }
 
-        echo $token;
+        echo $return;
     }
 
     public function actionInsertUser(){

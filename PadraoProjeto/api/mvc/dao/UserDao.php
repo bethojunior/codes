@@ -1,4 +1,5 @@
 <?php
+
 class UserDao extends BaseDao{
 
     protected $conn;
@@ -13,21 +14,14 @@ class UserDao extends BaseDao{
             $all = $query->fetchAll(PDO::FETCH_OBJ);
 
             if($query->rowCount() != 0){
-                return json_encode(array(
-                    "status" => true,
-                    "data" => $all,
-                    "message" => "Cliente encontrado",
-                ));
+
+                return ApiResponse::getResponse(true , 'find client' , $all);
             }
-            return json_encode(array(
-                "status" => false,
-                "data" => $all,
-                "message" => "Dados não conferem",
-            ));
+            return ApiResponse::getResponse(false , 'Dados não conferem' , $all);
             
             
         }catch(PDOException $e){
-            return false;
+            return ApiResponse::getResponse(false , $e->getMessage() , $all);
         }
     }
 

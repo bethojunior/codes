@@ -8,9 +8,9 @@
 
 class ApiResponse
 {
-    public static function getResponse($bool , $message){
+    public static function getResponse($bool , $message , $data = null){
         if($bool)
-            return json_encode(['result' => true, 'message' => $message]);
-        return json_encode(['result' => false, 'message' => $message]);
+            return json_encode(['result' => true , 'message' => $message , 'data' => $data]);
+        return json_encode(['result' => false , 'message' => $message , 'data' => $data]);
     }
 }

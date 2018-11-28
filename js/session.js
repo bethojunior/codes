@@ -66,4 +66,21 @@ class SessionCookie{
         return session[attribute];
 
     }
+
+    static setAttribute(nameCookie, property, newValue) {
+        let data = Session.getCookie(nameCookie);
+
+        if (Array.isArray(data)) {
+            Session.setCookie(nameCookie, data.map(object => {
+                object[property] = newValue;
+                return object;
+            }));
+            return;
+        }
+
+        data[property] = newValue;
+
+        Session.setCookie(nameCookie, data);
+    }
+
 }
