@@ -12,10 +12,10 @@ class Email{
     public $from;
 
     function __construct(){
-        //$this->from = "hgomescostajr@gmail.com";
+
     }
 
-    public static function send($from_name = "Betho" , $from_mail = "eu@betho.com.br" , $mail_subject , $mail_message , $mail_to = "eu@betho.com.br"){
+    public static function send($from_name , $from_mail , $mail_subject , $mail_message , $mail_to){
         $encoding = "utf-8";
 
         $subject_preferences = array(
@@ -37,11 +37,6 @@ class Email{
             return true;
 
         return false;
-
-    }
-
-    public static function sendLog($level , $user , $message){
-        $callback = "Erro critico. O usuário, ".$user." -> ".$message;
 
     }
 

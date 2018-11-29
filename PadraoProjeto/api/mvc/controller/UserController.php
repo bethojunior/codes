@@ -4,8 +4,15 @@
 class UserController{
 
     private $validate;
+    public $log;
+
+    const LEVEL_CRITICAL    = 1;
+    const LEVEL_MEDIUM      = 2;
+    const LEVEL_LIGHT       = 3;
+    const LEVEL_INFORMATION = 4;
 
     function __construct(){
+        //$this->log = new LogController();
         $initValidate   = new ValidateRequest();
         $this->validate = $initValidate->checkPermission();
         if(!$initValidate->checkPermission())
@@ -13,6 +20,7 @@ class UserController{
     }
 
     public function actionAuthenticate(){
+        $logC = new LogController();
         $login = $_POST['email'];
         $pass  = $_POST['pass'];
         $userDao = new UserDao();
@@ -20,11 +28,13 @@ class UserController{
         $token = self::updateTokenUser($login , $pass ,base64_encode(rand(1 , 150)));
 
         if($return){
+            $logC->logHere($login , self::LEVEL_INFORMATION ,"Usuário logou");
             echo $token;
             return false;
         }
 
         echo $return;
+        $logC->logHere($login , self::LEVEL_CRITICAL ,"Usuário não conseguiu logar");
     }
 
     public function actionInsertUser(){
