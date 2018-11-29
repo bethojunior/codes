@@ -10,6 +10,11 @@ class LogController
 {
     private $log;
 
+    const LEVEL_CRITICAL    = 1;
+    const LEVEL_MEDIUM      = 2;
+    CONST LEVEL_LIGHT       = 3;
+    const LEVEL_INFORMATION = 4;
+
     function __construct(){
         $this->log = new LogDao();
     }
@@ -49,5 +54,11 @@ class LogController
             return;
 
         echo ApiResponse::getResponse(false , "Erro ao pegar logs do ".$user.". ->controller");
+    }
+
+    public static function verifyLevelLog($level , $user , $message){
+        if($level === self::LEVEL_CRITICAL){
+            Email::sendLog($level , $user , $message);
+        }
     }
 }

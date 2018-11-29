@@ -25,7 +25,7 @@ class Permission
 
     public static function checkIsPublicRoute()
     {
-        $publics = ['user/Authenticate'];
+        $publics = ['user/Authenticate' , 'log/insertLog'];
 
         $url = $_GET['url'];
 

@@ -13,7 +13,6 @@ class UserController{
     }
 
     public function actionAuthenticate(){
-
         $login = $_POST['email'];
         $pass  = $_POST['pass'];
         $userDao = new UserDao();
