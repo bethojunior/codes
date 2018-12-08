@@ -1,6 +1,6 @@
-<?php  
+<?php
 
-    
+
 class UserController{
 
     private $validate;
@@ -12,7 +12,6 @@ class UserController{
     const LEVEL_INFORMATION = 4;
 
     function __construct(){
-        //$this->log = new LogController();
         $initValidate   = new ValidateRequest();
         $this->validate = $initValidate->checkPermission();
         if(!$initValidate->checkPermission())
@@ -28,13 +27,16 @@ class UserController{
         $token = self::updateTokenUser($login , $pass ,base64_encode(rand(1 , 150)));
 
         if($return){
-            $logC->logHere($login , self::LEVEL_INFORMATION ,"Usuário logou");
+            if($token){
+                $logC->logHere($login , self::LEVEL_INFORMATION ,"Usuário logou");
+                echo $token;
+                return false;
+            }
+            $logC->logHere($login , self::LEVEL_MEDIUM ,"Usuário não conseguiu logar");
             echo $token;
-            return false;
         }
-
         echo $return;
-        $logC->logHere($login , self::LEVEL_CRITICAL ,"Usuário não conseguiu logar");
+
     }
 
     public function actionInsertUser(){

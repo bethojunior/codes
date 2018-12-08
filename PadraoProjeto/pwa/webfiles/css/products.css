@@ -1,0 +1,11 @@
+.heightProducts{
+    overflow-y: scroll; 
+    height: 40vw;
+}
+
+@media screen and (max-width: 600px){
+    .heightProducts{
+        overflow-y: scroll;
+        height: 80vw;
+    }
+}
