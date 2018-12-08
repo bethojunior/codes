@@ -1,0 +1,48 @@
+
+
+1 - Configurar arquivo .htaccess
+
+    Na linha 10 e 11 contém o seguinte código
+        {
+            RewriteRule ^(.+)$ /geocorr/index/default.php?url=$1 [QSA,L]
+            RewriteRule ^$ /geocorr/index/default.php [R]
+        }
+
+        Reescreva colocando onde tem (geocorr) o nome da pasta de seu projeto. 
+        
+        EXEMPLO:
+
+        {
+            RewriteRule ^(.+)$ /NOME DO SEU PROJETO/index/default.php?url=$1 [QSA,L]
+            RewriteRule ^$ /NOME DO SEU PROJETO/index/default.php [R]
+        }
+
+
+2 - Configurar arquivo default.php
+
+        Dentro da pasta index contém o arquivo default.php.
+        A função dele é muito importante, pois nele contém o autoLoad  de todos os arquivos, assim, poupando o programador de ter que dar 
+        REQUIRE ou INCLUDE em suas classes.
+
+        Como nosso projeto contém o htaccess fazendo assim a nossa 'url amigavel' , para acessarmos uma parte especifica do nosso sistema/site,
+        precisamos apenas passar como parametro o nome da classe e method que redireciona a nossa view. Na classe Controller dentro de 'services/' temos essa função que é responsavel pelo tal.
+
+        No arquivo default.php , onde houver 
+
+            Controller::redirectControllerAction("Index","geocorr");
+        
+        passe como parametro o nome de sua classe(no exemplo temos o "INDEX"), e o nome do seu method (no exemplo , "geocorr");
+        No exemplo, passo meu method que "monto" minha view.
+
+
+3 - Configurar Connection.
+
+    Na classe Connection dentro de 'services/' na linha 26 temos o seguinte código:
+
+        {
+            $db = parse_ini_file('../configs/database/local.ini');
+        }
+
+    Ele ler o arquivo LOCAL.ini que está em configs. Nele setamos o nosso banco de dados, onde, geralmente, temos 2 arquivos de conexao,
+    local.ini && production.ini. Assim podemos trocar de banco apenas mudando o nome do arquivo (.ini) no Connection.
+         
