@@ -10,9 +10,5 @@
 
         }
 
-        public static function getHostPwa()
-        {
-            return env("pwa");
-        }
 
     }

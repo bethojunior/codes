@@ -1,28 +1,34 @@
-<!-- defaults js -->
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/lib/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/lib/axios.min.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/plugins/sweetalert.min.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/vendor/materialize/js/materialize.js"></script>
-
-<!-- utils -->
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/service/ConnectionServer.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/utils/Host.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/utils/ConnectAPI.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/utils/navbarMobile.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/utils/SimpleSwall.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/utils/ElementProperty.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/utils/validateData.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/utils/preload.js"></script>
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/utils/windowResize.js"></script>
-
-<!--controllers-->
-<script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/controllers/MailchimpController.js"></script>
-    <script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/modulos/mailchimp.js"></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/libs/jquery-3.2.1.min.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/libs/jquery.cookie.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/libs/jquery.mask.min.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/libs/pusher.min.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/PathUrl.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/libs/sweetalert.min.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/libs/materialize.min.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/utils/controller.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/utils/manager.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/utils/Host.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/ElementProperty.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/ConnectionServer.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/Progress.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/Position.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/Mask.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/DateService.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/EventTouche.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/Autocomplete.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/formatValue.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/service/ScreenShot.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/utils/Session.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/utils/DateCustom.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/utils/SwalCustom.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/utils/ValidateForm.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/utils/PreloaderCustomer.js" defer></script>
+<script src="<?php echo Host::getLocal();?>webfiles/js/utils/NetworkConnection.js" defer></script>
 
 <!-- import dynamic js in each page  -->
 <?php if(isset($this->filesJs)) : ?>
     <?php foreach ($this->filesJs as $file) : ?>
-        <script type="text/javascript" src="<?php echo Host::getLocal(); ?>webfiles/js/<?php echo $file ?>.js"></script>
+        <script type="text/javascript" src="<?php echo Host::getLocal();?>webfiles/js/<?php echo $file ?>.js"></script>
     <?php endforeach; ?>
 <?php endif; ?>
 </body>

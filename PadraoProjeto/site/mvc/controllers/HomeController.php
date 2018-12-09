@@ -1,16 +1,19 @@
-<?php 
-    class HomeController extends View{
+<?php
 
-        function actionIndex()
-        { 
-            $js  = ['utils/navBar','utils/navbarHomeMobile','modulos/home'];
-            $css = ['assets','reset','home','navbarTransparent','menuMobile','menuMobileHome','footer','preload'];
-            $views = ['preload/index','login/init'];
+class HomeController extends View{
 
-            $seo = new stdClass();
-            $seo->description   = 'Barkanas, o melhor espetinho da cidade';
-            $seo->title         = 'Barkanas';
+    function actionIndex(){
+        $js  = ['modulos/login/init'];
+        $css = ['login/init','preload'];
+        $views = ['preload/index','login/init'];
 
-            $this->layoutBuilder($views, $js, $css, $seo);
-        } 
+        $seo = new stdClass();
+        $seo->description   = 'Barkanas, o melhor espetinho da cidade';
+        $seo->title         = 'Barkanas';
+
+        $this->layoutBuilder($views, $js, $css, $seo);
     }
+
+
+
+}
