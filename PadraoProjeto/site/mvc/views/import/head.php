@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
           integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= Host::getLocal(); ?>webfiles/css/dosis.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- import dynamic css in each page  -->
     <?php
@@ -28,7 +29,7 @@
     <link rel="stylesheet" href="<?php echo Host::getLocal()?>webfiles/css/autocomplete.css">
 
     <meta property="og:image" content="<?= Host::getLocal(); ?>webfiles/img/logo.jpg">
-
+    <script src="<?=Host::getLocal();?>/webfiles/js/libs/jquery.js"></script>
     <!-- Facebook Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {

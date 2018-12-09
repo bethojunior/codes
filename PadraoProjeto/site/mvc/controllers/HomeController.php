@@ -3,9 +3,9 @@
 class HomeController extends View{
 
     function actionIndex(){
-        $js  = ['modulos/login/init'];
-        $css = ['login/init','preload'];
-        $views = ['preload/index','login/init'];
+        $js  = ['modulos/home/init'];
+        $css = ['home/init','preload'];
+        $views = ['preload/index','home/index','nav/firstNav'];
 
         $seo = new stdClass();
         $seo->description   = 'Barkanas, o melhor espetinho da cidade';

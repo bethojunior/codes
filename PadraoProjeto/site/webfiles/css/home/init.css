@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body{
+    background-color: #D77D00;
+    color: white;
+    font-family: "Montserrat";
+}
+.row.generalHome{
+    padding: 2vw;
+}
