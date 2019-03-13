@@ -1,3 +1,8 @@
+https://electronjs.org/docs/tutorial/installation
+
+npm install electron --save-dev
+
+npm install electron -g
 
 
 # Clone o repositório Quick Start

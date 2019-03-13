@@ -1,0 +1,4 @@
+function playAudio() {
+    let audio = new Audio('/webfiles/songs/songCallTaxi.wav');
+    audio.play();
+}

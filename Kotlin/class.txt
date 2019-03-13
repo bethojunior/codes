@@ -1,0 +1,40 @@
+open class Animal{
+    
+    var animal: String
+    
+    constructor(animal: String){
+        this.animal = animal;
+    }
+    
+    open fun dormir(){
+        println("Dormir $animal")
+    }
+    
+    fun correr(){
+        println("Correr $animal")
+    }
+}
+class Cao : Animal("cao") {
+   
+    override fun dormir(){
+        super.dormir()
+        println("como um cao")
+    }
+    
+    fun latir(){
+        println("Latir")
+    }
+    
+}
+class Passaro: Animal("Passaro") {}
+fun main(args: Array<String>) {
+ 
+    val cao = Cao()
+    cao.dormir()
+    cao.correr()
+    cao.latir()
+    
+    val passaro = Passaro()
+    //passaro.dormir()
+    
+}

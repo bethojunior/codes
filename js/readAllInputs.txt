@@ -1,0 +1,23 @@
+elementProperty.addEventInElement('.readInputBank' , 'onclick' , function(){
+    let change = false;
+    _that = this;
+    let inputs = document.getElementById('inputBank').childNodes;
+    for(i = 0; i < inputs.length; i++) {
+        if(inputs[i].tagName === 'INPUT'){
+            if(inputs[i].disabled === true){
+                change = true;
+                inputs[i].style.backgroundColor = 'white';
+                inputs[i].disabled = false;
+                continue;
+            }
+            inputs[i].disabled = true;
+            inputs[i].style.backgroundColor = 'whitesmoke';
+        }
+    }
+
+    if(change){
+        this.onclick = sendDataBank;
+        this.classList.add('saveBank');
+    }
+
+});

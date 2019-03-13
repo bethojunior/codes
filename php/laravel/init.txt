@@ -1,0 +1,6 @@
+laravel new NomeDoProjeto
+
+php artisan make:middleware nomedele
+
+https://packagist.org/packages/barryvdh/laravel-ide-helper
+composer require barryvdh/laravel-ide-helper

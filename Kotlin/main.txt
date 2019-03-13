@@ -1,0 +1,11 @@
+arrayOf('ok' , 'ok' , 11);
+
+fun exibirMensagem(nome: String , idade : Int): String {
+	var text = "boa noite $nome de $idade anos";
+    return text;
+}
+
+fun main(args: Array<String>){
+	var test = exibirMensagem("Betho" , 21);  
+    println(test)
+} 

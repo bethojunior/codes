@@ -1,0 +1,2 @@
+https://kotlinlang.org/docs/tutorials/android-plugin.html
+apply plugin: 'kotlin-android-extensions'

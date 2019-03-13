@@ -1,0 +1,28 @@
+.modal{
+    display: none;
+}
+.modal.show{
+    display: block;
+    transition: 1s;
+    position: fixed;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: -ms-flexbox;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: rgba(0,0,0,.3);
+}
+.modal.show .modalContent{
+    background-color: white;
+    width: auto;
+    padding: 1vw;
+    -webkit-border-radius: 0.2vw;
+    -moz-border-radius: 0.2vw;
+    border-radius: 0.2vw;
+}
