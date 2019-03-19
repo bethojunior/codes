@@ -1,0 +1,14 @@
+
+document.getElementById('shareMyLink').addEventListener('click', function(){
+    let id = user.data[0];
+
+    elementProperty.getElement('#mylink' , link => {
+        link.value = "https://poderasgar.com.br/me?id="+id.id;
+        document.getElementById('mylink').select();
+        document.execCommand('copy');
+        link.hidden = true;
+        Materialize.toast('Link copiado para area de transferência', 2000);
+    });
+
+
+});

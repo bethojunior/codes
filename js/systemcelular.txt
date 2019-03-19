@@ -1,0 +1,12 @@
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if(userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i )){
+                window.location.href = "https://itunes.apple.com/br/app/return-cliente/id1452297278?mt=8";
+                return
+
+            }
+            if(userAgent.match( /Android/i )){
+
+                window.location.href = "https://play.google.com/store/apps/details?id=br.com.taxireturn.client&showAllReviews=true";
+                return
+            }

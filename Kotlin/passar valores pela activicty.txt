@@ -1,0 +1,8 @@
+val intent = Intent(applicationContext , secondActivity::class.java)
+intent.putExtra("nome","Betho")
+intent.putExtra("idade","22")
+startActivity(intent)
+
+
+val dados : Bundle = intent.extras
+val nome   = dados.getString("nome")

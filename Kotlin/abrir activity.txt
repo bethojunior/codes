@@ -1,0 +1,4 @@
+        buttonContato.setOnClickListener {
+            val intent = Intent(this, DetalheClientesActivity::class.java)
+            startActivity(intent)
+        }
