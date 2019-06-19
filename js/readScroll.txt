@@ -1,8 +1,13 @@
+let elementProperty = new ElementProperty();
 window.document.addEventListener("scroll" , function(){
     console.log(pageYOffset);
     if(pageYOffset > 500) {
-        document.getElementById("headerCarousel").style.display = "block";
+        elementProperty.getElement('.nav-home', nav => {
+            nav.style.opacity = '0.6';
+        });
     }else{
-        document.getElementById("headerCarousel").style.display = "none";
+        elementProperty.getElement('.nav-home', nav => {
+            nav.style.opacity = '1';
+        });
     }
 });

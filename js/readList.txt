@@ -1,25 +1,10 @@
-function searchNotification() {
-    let valor = document.getElementById("searchNotification").value;
-
-    for(let i in document.getElementsByClassName("rowListTable")){
-        if(document.getElementsByClassName("titleNotificationRead")[i].tagName !== "TD"){
-            continue;
+//<tr id='tr-products' value='${res.name}'>
+elementProperty.addEventInElement('#search-products' , 'oninput' , function(){
+    keys = this.value;
+    elementProperty.getElement('#tr-products' , element => {
+        element.hidden = true;
+        if(element.getAttribute("value").toUpperCase().startsWith(keys.toUpperCase())){
+            element.hidden = false;
         }
-        document.getElementsByClassName("rowListTable")[i].style.display = "none";
-        if(document.getElementsByClassName("titleNotificationRead")[i].getAttribute("value").toUpperCase().startsWith(valor.toUpperCase())){
-            document.getElementsByClassName("rowListTable")[i].style = "";
-        }
-    }
-}
-
-
-            elementProperty.addEventInElement('#searchDriver' , 'oninput' , function(){
-                keys = this.value;
-                elementProperty.getElement('.heightDrivers' , element => {
-                    element.hidden = true;
-                    if(element.getAttribute("value").toUpperCase().startsWith(keys.toUpperCase())){
-                        console.log(this.value);
-                        element.hidden = false;
-                    }
-                });
-            });
+    });
+});
