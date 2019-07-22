@@ -1,0 +1,14 @@
+let validos = /(\.jpg|\.png|\.gif|\.pdf|\.txt|\.doc|\.docx)$/i;
+
+$("#arquivo").change(function() {
+
+  let fileInput = $(this);
+  let nome = fileInput.get(0).files["0"].name;
+  if (validos.test(nome)) {
+    console.log("Válido")
+  } else {
+    console.log("Inválido")
+  }
+});
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<input type="file" id="arquivo">
