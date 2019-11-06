@@ -1,0 +1,72 @@
+<select hidden id="mount-users"></select>
+$('#mount-users').select2({
+    placeholder: 'Selecione o responsável',
+    width: '100%',
+    ajax: {
+        url: `${ConnectionServer.Host()}customer`,
+        headers: {
+            'token': Session.getValueInSession('user', 'api_token'),
+            'userid': Session.getValueInSession('user', 'idUser')
+        },
+        dataType: 'json',
+        delay: 250,
+        data: function (params) {
+            return {
+                'name': params.term,
+            };
+        },
+        processResults: function (result, params) {
+            params.page = params.page || 1;
+            return {
+                results: result.data.data.map(user => {
+                    return {
+                        id: user.idUser,
+                        text: user.name,
+                        email: user.email,
+                        phone: user.phone
+                    }
+                }),
+            };
+        },
+    },
+    escapeMarkup: function (markup) {
+        return markup;
+    },
+    minimumInputLength: 1,
+    templateResult: formatSelecting,
+    templateSelection: formatRepoSelection
+});
+
+function formatSelecting(result) {
+    if (result.loading) {
+        return "Buscando...";
+    }
+    
+    id = result.id;
+
+    elementProperty.getElement('#phone-manager' , phone => {
+        phone.value = result.phone;
+    });
+
+    elementProperty.getElement('#email-manager' , email => {
+        email.value = result.email;
+    });
+
+    dataManager = result;
+
+    return `<div class="item-select2" value="${result.idUser}">
+                    <div>
+                        ${result.text}
+                    </div>
+                    <div>
+                        ${result.email}
+                    </div>
+                    <div>
+                        ${result.phone}
+                    </div>
+                </div>`;
+}
+
+function formatRepoSelection(result) {
+    return result.text;
+}

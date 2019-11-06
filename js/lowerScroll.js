@@ -1,1 +1,0 @@
-$("#bodyMessages").scrollTop($("#bodyMessages").height());

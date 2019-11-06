@@ -1,0 +1,8 @@
+    var form = new FormData();
+    let name  = document.getElementById('new-name-type-item').value;
+    let image = document.getElementById('new-item-upload');
+    if(image.files[0] !== undefined || image.files[0] !== null){
+        form.append('picture', image.files[0]);
+    }
+    form.append('picture', '');
+    form.append('name' , name);
